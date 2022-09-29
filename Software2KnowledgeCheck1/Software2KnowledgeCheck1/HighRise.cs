@@ -8,8 +8,9 @@ namespace Software2KnowledgeCheck1
 {
     internal class HighRise : Building
     {
+        //added null conditional operator. May need to remove for assignment
         public int NumberOfStories { get; set; }
-        public string OwnerName { get; set; }
-        public List<string> Directory  { get; set; }
+        public string? OwnerName { get; set; }
+        public List<string>? Directory  { get; set; }
     }
 }
