@@ -9,8 +9,8 @@ namespace Software2KnowledgeCheck1
     internal class Construction
     {
         public List<Building> Buildings { get; } = new List<Building>();
-        
-            void CreateApartment(Apartment apartment)
+
+        void CreateApartment(Apartment apartment)
         {
             // Get materials
             var materialRepo = new MaterialsRepo();
@@ -25,28 +25,28 @@ namespace Software2KnowledgeCheck1
                 Buildings.Add(apartment);
             }
         }
-            public bool ConstructBuilding<T>(List<string> materials, bool permit, bool zoning) where T : Building
+        public bool ConstructBuilding<T>(List<string> materials, bool permit, bool zoning) where T : Building
+        {
+            if (permit && zoning)
             {
-                    if (permit && zoning)
+                foreach (var material in materials)
+                {
+                    if (material == "concrete")
                     {
-                        foreach (var material in materials)
-                        {
-                            if (material == "concrete")
-                            {
-                                // start laying foundation
-                            }
-                            else if (material == "Steel")
-                            {
-                                // Start building structure
-                            }
-                            // etc etc...
-                        }
-                        return true;
+                        // start laying foundation
                     }
-                    else
+                    else if (material == "Steel")
                     {
-                        return false;
+                        // Start building structure
                     }
+                    // etc etc...
                 }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
+}
