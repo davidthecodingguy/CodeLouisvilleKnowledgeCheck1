@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software2KnowledgeCheck1
 {
-    internal class CreateBuildings
+    internal class Construction
     {
        public List<Building> Buildings { get; } = new List<Building>();
 
